@@ -47,21 +47,29 @@ class PostController < ApplicationController
   end
 
   def unlike
-    l = Like.where(id => params[:post_id]).where(:user_id => current_user).take
+    l = Like.where(:post_id => params[:post_id]).where(:user_id => current_user).take
     l.delete
     redirect_to "/post"
   end
 
+###################################
+
   def black
-    p = Post.where(:post_id => id).take
+    p = Post.find(params[:post_id])
     p.a = p.a + 1
     p.total = p.total + 1
+    p.save
+
+    redirect_to '/post'
   end
 
   def white
-    p = Post.where(:post_id => params[:post_id]).take
+    p = Post.find(params[:post_id])
     p.b = p.b + 1
-    p,total = p.total + 1
+    p.total = p.total + 1
+    p.save
+
+    redirect_to '/post'
   end
 
 end
