@@ -63,9 +63,4 @@ class PostController < ApplicationController
     redirect_to "/post"
   end
 
-  private
-    def post_params
-      params.require(:post).permit(:title, :content, :img1, :img2, :crop_x, :crop_y, :crop_w, :crop_h)
-    end
-
 end
