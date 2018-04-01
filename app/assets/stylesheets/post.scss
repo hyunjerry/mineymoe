@@ -21,7 +21,10 @@
     // cursor: pointer;
     border-radius: 5px;
     text-align: center;
-}
+
+    object-fit: scale-down;
+  }
+
 .container {
     position: relative;
     left: 0px;
@@ -37,6 +40,7 @@
     width: 100%;
     opacity: 0.5;
 }
+
 .bottomblack {
     position: absolute;
     bottom: 0px;
