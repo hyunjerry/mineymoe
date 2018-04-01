@@ -3,5 +3,12 @@
 <!-- <h1>Home#show</h1> -->
 
 <div class="container" style= "width: 100%; height: auto;">
-  <img style="width: 100%;"  src ="/landing_page.png">
+  <img style="width: 100%; margin-top: 20%;"  src ="/landing_page.png">
+
+  <%= link_to "/auth/google_oauth2", id: "sign_in" do%>
+    <div class="google-sign-in"></div>
+    <%end%>
+
+  <!-- <div class="center"><img src="/btn_google_signin_light_normal_web@2x.png"></div> -->
+  <!-- <img style="width: 100%;"  src="/btn_google_signin_light_normal_web@2x.png"> -->
 </div>
