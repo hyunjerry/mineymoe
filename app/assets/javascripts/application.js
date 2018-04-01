@@ -12,6 +12,5 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require jcrop
 //= require_tree .
 //= require serviceworker-companion

@@ -8,7 +8,6 @@ class PostController < ApplicationController
   end
 
   def new
-
   end
 
   def view
@@ -16,8 +15,6 @@ class PostController < ApplicationController
   end
 
   def create
-    post = Post.new
-
     post.title = params[:title]
     post.content = params[:content]
     post.a = 0
@@ -69,6 +66,5 @@ class PostController < ApplicationController
     b.save
     redirect_to "/post"
   end
-
 
 end
