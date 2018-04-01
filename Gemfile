@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'gcloud'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
 gem 'fog-aws'
 
 # Use CoffeeScript for .coffee assets and views

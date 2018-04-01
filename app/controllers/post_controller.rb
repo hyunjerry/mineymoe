@@ -8,44 +8,28 @@ class PostController < ApplicationController
   end
 
   def new
-    @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
-    if params[:post][:img1].present? && params[:post][:img2].present?
-      if @post.save
-        render :crop
-      end
-    else
-      redirect_to '/post/new', notice: "Two pictures are required!"
-    end
+    post.title = params[:title]
+    post.content = params[:content]
+    post.a = 0
+    post.b = 0
+    post.user_name = ""
+    post.total = 0
 
-    # post.title = params[:title]
-    # post.content = params[:content]
-    # post.a = 0
-    # post.b = 0
-    # post.user_name = ""
-    # post.total = 0
-    #
-    # if params[:pic1].present? && params[:pic2].present?
-    #   render :crop
-    # else
-    #   redirect_to '/post/new', notice: "Two pictures are required!"
-    # end
-    #
-    # uploader1 = ImageUploader.new
-    # uploader1.store!(params[:pic1])
-    #
-    # uploader2 = ImageUploader.new
-    # uploader2.store!(params[:pic2])
-    #
-    # post.a_url = uploader1.url
-    # post.b_url = uploader2.url
-    #
-    # post.save
-    #
-    # redirect_to '/post/new'
+    uploader1 = ImageUploader.new
+    uploader1.store!(params[:pic1])
+
+    uploader2 = ImageUploader.new
+    uploader2.store!(params[:pic2])
+
+    post.a_url = uploader1.url
+    post.b_url = uploader2.url
+
+    post.save
+
+    redirect_to '/post/new'
 
   end
 
