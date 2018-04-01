@@ -5,10 +5,11 @@ class PostController < ApplicationController
   end
 
   def post
+    count = Post.count
+    @post = Post.find(rand(1..count))
   end
 
   def new
-
   end
 
   def view
@@ -17,8 +18,6 @@ class PostController < ApplicationController
   end
 
   def create
-    post = Post.new
-
     post.title = params[:title]
     post.content = params[:content]
     post.a = 0
@@ -82,8 +81,5 @@ class PostController < ApplicationController
     c.save
     redirect_to '/post'
   end
-
-
-
 
 end
