@@ -7,20 +7,27 @@
 </head>
 <body>
   <%=render 'layouts/navbar'%>
-  <h1>Post page!!!<%current_user.uid%></h1>
+  <div class="container-fluid">
+  <h1>Post page!!!</h1>
   <br>
-  <div>
+  <div class ="row">
     <% @posts.each do |p| %>
       <div style = "display: flex;">
-        <div style= "border: 5px solid black; width: 400px; height: 400px;"> <p> Picture A </p> </div>
+        <h2>p.title</h2>
+        <div class="col-sm-6" style= "border: 5px solid black; width: 400px; height: 400px; ;">
+          <img style="max-width: 400px;" src="<%= p.a_url %>" />
+          <div class="bottomblack">Choose Black</div>
+          <a href = "/black/<%=p.id%>"> <button type="button" class="btn btn-outline-secondary">Black</button> </a>
+        </div>
 
-        <div style = "font-size: 48px;"> <p> VS </p> </div>
+        <div class="col-sm-6" style= "border: 5px solid black; width: 400px; height: 400px; ;">
+          <img style="max-width: 400px;" src="<%= p.b_url%>" />
+          <div class="bottomwhite">Choose White</div>
+          <a href="/white/<%= p.id%>"> <button type="button" class="btn btn-outline-secondary">White</button> </a>
+        </div>
 
-        <div style= "border: 5px solid black; width: 400px; height: 400px;"> <p> Picture B </p> </div>
      </div>
 
-
-     <p>###########</p>
 
 
 <%if Like.where(:user_id=>current_user).where(:post_id => p.id).empty?%>
@@ -32,24 +39,6 @@
     <a href = "/unlike/<%=p.id%>"> <button type="button" class="btn btn-danger">Unlike </button> </a>
   </div>
 <%end%>
-
-
-
-
-
-     <p>###########</p>
-
-    <form action = "/create" method="POST" class="field">
-      <input type = "hidden" name="post_id" value="<%= p.id %>">
-      a제목 <input type = "text" name = "atitle">
-      b제목 <input type = "text" name = "btitle">
-      a내용 <input type = "text" name = "acontent">
-      b내용 <input type = "text" name = "bcontent">
-      <input type = "submit" value = "등록" class="button-submit">
-    </form>
-
-
-
 
   <% end %>
 

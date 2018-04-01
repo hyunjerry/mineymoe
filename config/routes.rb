@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get 'post/:post_id' => 'post#view'
 
 
-  get 'post/post' => 'post#post'
+  get 'posts/post' => 'post#post'
+
   post 'post/create' => 'post#create'
 
   get 'like' => 'post#postlike'
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   get "like/:post_id" => "post#like"
   get "unlike/:post_id" => "post#unlike"
 
+  get 'black/:post_id' => 'post#black'
+  get 'white/:post_id' => 'post#white'
 
 
 ########################

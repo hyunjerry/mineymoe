@@ -5,13 +5,16 @@ class PostController < ApplicationController
   end
 
   def post
+    count = Post.count
+    @post = Post.find(rand(1..count))
   end
 
   def new
   end
 
   def view
-    @thepost = Post.find(params[:post_id])
+    @posts = Post.all
+
   end
 
   def create
@@ -51,20 +54,24 @@ class PostController < ApplicationController
     redirect_to "/post"
   end
 
-  def acount
-    a = Acount.new
-    a.user = current_user
-    a.post_id = params[:post_id]
-    a.save
-    redirect_to "/post"
+###################################
+
+  def black
+    p = Post.find(params[:post_id])
+    p.a = p.a + 1
+    p.total = p.total + 1
+    p.save
+
+    redirect_to '/post'
   end
 
-  def bcount
-    b = Bcount.new
-    b.user = current_user
-    b.post_id = params[:post_id]
-    b.save
-    redirect_to "/post"
+  def white
+    p = Post.find(params[:post_id])
+    p.b = p.b + 1
+    p.total = p.total + 1
+    p.save
+
+    redirect_to '/post'
   end
 
 end
