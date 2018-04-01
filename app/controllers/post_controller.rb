@@ -5,6 +5,8 @@ class PostController < ApplicationController
   end
 
   def post
+    count = Post.count
+    @post = Post.find(rand(1..count))
   end
 
   def new
