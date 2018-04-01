@@ -1,6 +1,5 @@
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actioncable (5.1.6)
       actionpack (= 5.1.6)
@@ -213,7 +212,6 @@ GEM
     memoist (0.16.0)
     method_source (0.9.0)
     mime-types (2.99.3)
-    mini_magick (4.8.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -263,7 +261,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.6)
       sprockets-rails (>= 2.0.0)
-    rails-assets-jcrop (2.0.4)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -379,13 +376,11 @@ DEPENDENCIES
   gmail
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  mini_magick
   mysql2 (~> 0.5.0)
   nokogiri (~> 1.8.2)
   omniauth-google-oauth2 (~> 0.2.1)
   puma (~> 3.7)
   rails (~> 5.1.6)
-  rails-assets-jcrop!
   rails_db
   sass-rails (~> 5.0)
   selenium-webdriver
