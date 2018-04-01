@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20180401050620) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "a"
-    t.integer "b"
+    t.integer "a", default: 0
+    t.integer "b", default: 0
     t.string "user_name"
-    t.integer "total"
+    t.integer "total", default: 0
     t.string "a_url", default: ""
     t.string "b_url", default: ""
     t.datetime "created_at", null: false

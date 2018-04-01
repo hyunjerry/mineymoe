@@ -11,7 +11,8 @@ class PostController < ApplicationController
   end
 
   def view
-    @thepost = Post.find(params[:post_id])
+    @posts = Post.all
+
   end
 
   def create
@@ -46,25 +47,21 @@ class PostController < ApplicationController
   end
 
   def unlike
-    l = Like.where(:post_id => params[:post_id]).where(:user_id => current_user).take
+    l = Like.where(id => params[:post_id]).where(:user_id => current_user).take
     l.delete
     redirect_to "/post"
   end
 
-  def acount
-    a = Acount.new
-    a.user = current_user
-    a.post_id = params[:post_id]
-    a.save
-    redirect_to "/post"
+  def black
+    p = Post.where(:post_id => id).take
+    p.a = p.a + 1
+    p.total = p.total + 1
   end
 
-  def bcount
-    b = Bcount.new
-    b.user = current_user
-    b.post_id = params[:post_id]
-    b.save
-    redirect_to "/post"
+  def white
+    p = Post.where(:post_id => params[:post_id]).take
+    p.b = p.b + 1
+    p,total = p.total + 1
   end
 
 end
