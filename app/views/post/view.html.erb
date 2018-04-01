@@ -22,40 +22,36 @@
      <p>###########</p>
 
 
-<%if Like.where(:user_id=>current_user).where(:post_id => p.id).empty?%>
-  <div class="button-holder">
-    <a href = "/like/<%=p.id%>"> <button type="button" class="btn btn-primary">Like(<%=Like.where(:post_id => p.id).size %></button></a>
-  </div>
-<%else%>
-  <div class="button-holder">
-    <a href = "/unlike/<%=p.id%>"> <button type="button" class="btn btn-danger">Unlike </button> </a>
-  </div>
-<%end%>
+ <%if Like.where(:user_id=>current_user).where(:post_id => p.id).empty?%>
+   <div class="button-holder">
+     <a href = "/like/<%=p.id%>"> <button type="button" class="btn btn-primary">Like(<%=Like.where(:post_id => p.id).size %></button></a>
+   </div>
+ <%else%>
+   <div class="button-holder">
+     <a href = "/unlike/<%=p.id%>"> <button type="button" class="btn btn-danger">Unlike </button> </a>
+   </div>
+ <%end%>
 
 
+        <div style = "display: flex;">
+          <button type="button" class="btn btn-primary">Choose A</button>
+          <button type="button" class="btn btn-secondary">skip</button>
+          <button type="button" class="btn btn-danger">Choose B</button>
+        </div>
+      <div style = "display: flex;">
+        <div style= "border: 5px solid black; width: 300px; height: 100px;">
+          <p> A percentage </p>
+        </div>
 
+        <div style = "font-size: 48px;">
+          <p> VS </p>
+        </div>
 
-
-     <p>###########</p>
-
-    <form action = "/create" method="POST" class="field">
-      <input type = "hidden" name="post_id" value="<%= p.id %>">
-      a제목 <input type = "text" name = "atitle">
-      b제목 <input type = "text" name = "btitle">
-      a내용 <input type = "text" name = "acontent">
-      b내용 <input type = "text" name = "bcontent">
-      <input type = "submit" value = "등록" class="button-submit">
-    </form>
-
-
-
-
-  <% end %>
-
-  <br>
-  <br>
-
-
+        <div style= "border: 5px solid black; width: 300px; height: 100px;">
+          <p> B percentage </p>
+        </div>
 
   </div>
+
+</div>
 </body>

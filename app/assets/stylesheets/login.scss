@@ -12,11 +12,21 @@
 
 }
 
+.brand_logo{
+  background-image: url("MNMO.png");
+  backgound-size: 122px 30px;
+  width: 122px;
+  height: 30px;
+  z-index: 15;
+  opacity: 1;
+  // width="90px" height="30px" atl=""
+}
+
 .login_text{
   color: grey;
   margin-top: 7.5px;
   margin-bottom: 5px;
   // margin-left: 5px;
   // margin-right: 5px;
-  text-align: right;
+  // text-align: right;
 }

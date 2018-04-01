@@ -14,24 +14,20 @@ Rails.application.routes.draw do
   get 'post/new'
 
   get '/post' => 'post#index'
+  get 'post/:post_id' => 'post#view'
+
 
   get 'post/post' => 'post#post'
   post 'post/create' => 'post#create'
 
   get 'like' => 'post#postlike'
 
-  get "like/:post_id" => "post#postlike"
-  get "unlike/:post_id" => "post#postunlike"
+  get "like/:post_id" => "post#like"
+  get "unlike/:post_id" => "post#unlike"
 
 
 
 ########################
-  post 'partycreate' => 'partypost#partycreate'
-  post 'partycomment' => "partypost#partycomment"
-  get "partyjoin/:post_id" => "partypost#partyjoin"
-  get "partydisjoin/:post_id" => "partypost#partydisjoin"
-
-
   #
   # get 'auth/:provider/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')
